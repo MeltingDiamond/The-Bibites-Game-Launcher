@@ -1,0 +1,54 @@
+# This workflow builds on push to main for Windows 32x/64x, Linux 64x and MacOS 64x
+
+name: Build Cross-Platform
+
+# Disable auto-triggering by commenting out the 'on' block, when ready do compile uncomment 'on' block
+# on:
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  build:
+    name: Build ${{ matrix.runtime }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            runtime: win-x64
+          - os: windows-latest
+            runtime: win-x86
+          - os: ubuntu-latest
+            runtime: linux-x64
+          - os: macos-latest
+            runtime: osx-x64
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish application
+        run: |
+          dotnet publish \
+            --configuration Release \
+            --runtime ${{ matrix.runtime }} \
+            --self-contained true \
+            --output ./publish/${{ matrix.runtime }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.runtime }}
+          path: ./publish/${{ matrix.runtime }}
