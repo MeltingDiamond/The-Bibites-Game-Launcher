@@ -1,0 +1,9 @@
+# This needs to be setup correctly to build for Windows, Linux and MacOS and uses https://github.com/avaloniaui/avalonia as the UI framework
+
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
