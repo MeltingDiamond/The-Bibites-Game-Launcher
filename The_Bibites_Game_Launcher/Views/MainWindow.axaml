@@ -7,6 +7,6 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="The_Bibites_Game_Launcher.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="The_Bibites_Game_Launcher">
+        Title="The Bibites Game Launcher">
         <views:MainView />
 </Window>

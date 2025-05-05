@@ -15,9 +15,9 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            runtime: win-x64
+            runtime: windows-x64
           - os: windows-latest
-            runtime: win-x86
+            runtime: windows-x86
           - os: ubuntu-latest
             runtime: linux-x64
           - os: macos-latest
