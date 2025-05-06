@@ -12,5 +12,6 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <Button HorizontalAlignment="Test Button">Calculate</Button>
 </UserControl>
