@@ -13,10 +13,10 @@
   </Design.DataContext>
 
   <StackPanel>
-    <border Margin="3" CornerRadius="15" Background="DarkBlue">
+    <Border Margin="3" CornerRadius="15" Background="DarkBlue">
       <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </border>
-    <TextBlock Text="As you can see it is not finished yet." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBlock Text="As you can see it is not finished yet." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Border>
     <Grid ShowGridLines="True" Margin="5" 
           ColumnDefinitions="120, 100"
           RowDefinitions="Auto, Auto, Auto">
