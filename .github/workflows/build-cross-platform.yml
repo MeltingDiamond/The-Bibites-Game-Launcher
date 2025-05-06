@@ -40,7 +40,7 @@ jobs:
 
       - name: Publish application
         run: |
-          dotnet publish --configuration Release --runtime ${{ matrix.runtime }} --self-contained true 
+          dotnet publish --configuration Release --runtime ${{ matrix.runtime }} --self-contained true --output ./publish/${{ matrix.runtime }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
