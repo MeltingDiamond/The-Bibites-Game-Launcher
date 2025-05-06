@@ -13,8 +13,16 @@
   </Design.DataContext>
 
   <StackPanel>
-    <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    <TextBlock Text="As you can see it is not finished yet." HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    <Button HorizontalAlignment="Center">Test Button</Button>
+    <border Margin="3" CornerRadius="20" Background="DarkBlue">
+      <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBlock Text="As you can see it is not finished yet." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <Button HorizontalAlignment="Center">Test Button</Button>
+    </border>
+    <Grid ShowGridLines="True" Margin="5" 
+          ColumnDefinitions="120, 100"
+          RowDefinitions="Auto, Auto, Auto">
+        <Label Grid.Row="0" Grid.Column="0">Bibite Version</Label>
+        <TextBox Grid.Row="1" Grid.Column="0" Text="Here there might display versions that you can download"\>
+    </Grid>
   </StackPanel>
 </UserControl>
