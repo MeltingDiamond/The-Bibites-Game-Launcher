@@ -22,7 +22,7 @@
           ColumnDefinitions="120, 100"
           RowDefinitions="Auto, Auto, Auto">
         <Label Grid.Row="0" Grid.Column="0">Bibite Version</Label>
-        <TextBox Grid.Row="1" Grid.Column="0" Text="Here there might display versions that you can download"\>
+        <TextBox Grid.Row="1" Grid.Column="0" Text="Here there might display versions that you can download"/>
     </Grid>
   </StackPanel>
 </UserControl>
