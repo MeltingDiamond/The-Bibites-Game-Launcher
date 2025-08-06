@@ -1,22 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Bibites Game Launcher.Desktop", "The Bibites Game Launcher.Desktop\The Bibites Game Launcher.Desktop.csproj", "{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The_Bibites_Game_Launcher", "The_Bibites_Game_Launcher\The_Bibites_Game_Launcher.csproj", "{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Bibites Game Launcher.Desktop", "The Bibites Game Launcher.Desktop\The Bibites Game Launcher.Desktop.csproj", "{C4BB2425-7FAE-45A4-8D65-88ED3AC33957}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110BFD43-A257-49A1-B8DA-BFE0DC69F77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BB2425-7FAE-45A4-8D65-88ED3AC33957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BB2425-7FAE-45A4-8D65-88ED3AC33957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BB2425-7FAE-45A4-8D65-88ED3AC33957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BB2425-7FAE-45A4-8D65-88ED3AC33957}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF98BC0B-D960-466B-86AD-64762F283A08}
 	EndGlobalSection
 EndGlobal
