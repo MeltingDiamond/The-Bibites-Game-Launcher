@@ -14,13 +14,13 @@
 
   <StackPanel>
     <Border Margin="3" CornerRadius="15" Background="LightBlue">
-      <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBlock Text="Welcome to The Bibites Game Launcher!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
     </Border>
     <TextBlock Text="As you can see it is not finished yet." HorizontalAlignment="Center" VerticalAlignment="Center"/>
     <Grid ShowGridLines="False" Margin="5" 
           ColumnDefinitions="400, 200"
           RowDefinitions="Auto, Auto, Auto">
-        <Label Grid.Row="0" Grid.Column="0">{Binding Greeting}</Label>
+        <Label Grid.Row="0" Grid.Column="0">Bibites Version</Label>
 		<Label Grid.Row="1" Grid.Column="0">Here there might display versions that you can download</Label>
         <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">Maybe Download Button</Button>
     </Grid>
