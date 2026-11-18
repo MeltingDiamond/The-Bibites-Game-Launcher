@@ -1,0 +1,4 @@
+#tk>=0.1.0
+show-in-file-manager>=1.1.6
+Nuitka>=4.3.4
+pillow>=13.0.0

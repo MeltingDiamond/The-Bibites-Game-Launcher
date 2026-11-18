@@ -1,12 +1,20 @@
 # The-Bibites-Game-Launcher
-A community made game launcher programmed in c# to download and launch the bibites. This is an alternative to steam for people using The Bibites for free. This will also supports old versions.
+A community made game launcher programmed in python to download and launch the bibites. This is an alternative to steam for people using The Bibites for free. Supports old versions.
 
-This launcher uses the [Avalonia UI framework](https://github.com/avaloniaui/avalonia) to build the launcher
+tkinter is used to build the launcher
 
 ## How to try this launcher?
-Go to [Actions](https://github.com/MeltingDiamond/The-Bibites-Game-Launcher/actions), click on a action, scroll to the bottom of the page and download the correct version for your os.
+For latest version download and run the python source.
+For stable release version built into executable go to the [releases page](https://github.com/MeltingDiamond/The-Bibites-Game-Launcher/releases)
 
 If you find any bugs create a new [issue here](https://github.com/MeltingDiamond/The-Bibites-Game-Launcher/issues)
 
 ## Contribution
-If you wan't to help just clone this repository onto your computer, open it in Visual Studio (that is what I use, but Visual Studio Code can also work) do your changes and push it back as a pull request. Make sure to add a fitting commit message explaining your change and please don't leave broken code when you are finished.
+If you want to help just clone this repository onto your computer, open it in the program you use to program python, do your changes and push it back as a pull request. Make sure to add a fitting commit message explaining your change and please don't leave broken code when you are finished.
+
+## Build locally
+Clone or download repository create a install the required libraries using `pip install -r requirements.txt`.<br>
+
+<sub style="color: orange;">Note on windows you need to manually install make and add it to path, wont be explained here</sub><br>
+Run either `make` (global maybe) or os specific `make windows` or `make linux`
+If you want to clean up the generated files `make clean-windows` or `make clean-linux`
