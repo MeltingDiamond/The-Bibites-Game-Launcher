@@ -9,6 +9,12 @@ For stable release version built into executable go to the [releases page](https
 
 If you find any bugs create a new [issue here](https://github.com/MeltingDiamond/The-Bibites-Game-Launcher/issues)
 
+## Included mods
+A list of the included mods and a short description.<br><small>You don't have to choose any of them</small>
+- Sandboxing - Isolates the save and bibite location to the current instance
+
+- BibiteFixed - Small BepInEx modpack for bug fixes and performance improvements for The Bibites (https://github.com/DrBwaa/BibiteFixes)
+
 ## Contribution
 If you want to help just clone this repository onto your computer, open it in the program you use to program python, do your changes and push it back as a pull request. Make sure to add a fitting commit message explaining your change and please don't leave broken code when you are finished.
 
