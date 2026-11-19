@@ -21,7 +21,7 @@ os_map = {
 }
 OS_TYPE = os_map.get(platform.system(), "Unknown") # The os the program thinks it is running on
 
-CONFIG_VERSION = 1 # The version of the current config. Updated only when variables in the config file change name and conversion is needed
+CONFIG_VERSION = 1 # The version of the current config. Updated only when conversion is needed or variables in the config file change name. Conversion needs to be coded in when its needed
 
 APPLICATION_NAME = "BibiteLauncher Python" # Name of the application
 
@@ -156,8 +156,13 @@ def installBepInExToInstance(name, BepInExVersion):
     """Installs BepInEx to an installation"""
     instancesFolderPath = os.path.join(installationFolderPath, name)
     gameFolderPath = os.path.join(instancesFolderPath, "gameFolder")
+
+    configFolderPath = os.path.join(instancesFolderPath, "BepInEx-config")
+    BepInExConfigFolderPath = os.path.join(gameFolderPath, "BepInEx", "config")
+
     modsFolderPath = os.path.join(instancesFolderPath, "mods")
-    pluginsFolderPath = os.path.join(gameFolderPath, "BepInEx", "plugins")
+    BepInExPluginsFolderPath = os.path.join(gameFolderPath, "BepInEx", "plugins")
+
     splitBepInExVersion = BepInExVersion.split("/")
     BepInExOSVersionPath = os.path.join(localBepInExVersionsFolderPath, splitBepInExVersion[0], splitBepInExVersion[-1])
     with zipfile.ZipFile(os.path.join(BepInExOSVersionPath), "r") as BepInExZip:
@@ -166,12 +171,20 @@ def installBepInExToInstance(name, BepInExVersion):
     # Symlink mods folder into BepInEx plugins folder
     if not os.path.isdir(modsFolderPath):
         os.makedirs(modsFolderPath)
-    if os.path.isdir(pluginsFolderPath):
-        deleteFileOrFolder(pluginsFolderPath)
+    if not os.path.isdir(configFolderPath):
+        os.makedirs(configFolderPath)
+
+    if os.path.isdir(BepInExPluginsFolderPath):
+        deleteFileOrFolder(BepInExPluginsFolderPath)
+    if os.path.isdir(BepInExConfigFolderPath):
+        deleteFileOrFolder(BepInExConfigFolderPath)
+
     if OS_TYPE == "Windows": # Special case for windows
-        subprocess.check_call(["mklink", "/J", pluginsFolderPath, modsFolderPath], shell=True)
+        subprocess.check_call(["mklink", "/J", BepInExPluginsFolderPath, modsFolderPath], shell=True)
+        subprocess.check_call(["mklink", "/J", BepInExConfigFolderPath, configFolderPath], shell=True)
     else: # Case for Linux and MacOS
-        os.symlink(modsFolderPath, pluginsFolderPath, target_is_directory=True)
+        os.symlink(modsFolderPath, BepInExPluginsFolderPath, target_is_directory=True)
+        os.symlink(configFolderPath, BepInExConfigFolderPath, target_is_directory=True)
 
 def removeBepInExFromInstance(name):
     """Attempts to remove BepInEx from the installation without touching any of The Bibites game files by selectively deleting only the files/folders used by BepInEx"""
@@ -389,7 +402,6 @@ def generateInstallationItem(name, version, BepInExVersion, error):
 
 def updateInstallationsList():
     """Updates the list of instances displayed on the main page"""
-    print(mainFrame.winfo_children())
     for child in mainFrame.winfo_children():
         if type(child) == type(Frame()):
             child.grid_forget()
@@ -604,7 +616,6 @@ def play(name):
                     with open(BepInExcfgPath, 'w') as configfile:
                         config.write(configfile)
 
-                #print([os.path.join(gameFolder, "run_bepinex.sh"), f"{gamePath}", "-force-vulkan"])
                 theBibites = subprocess.Popen(
                     ["bash", "-c",
                      f'exec -a "run_bepinex.sh" "{os.path.join(gameFolder, "run_bepinex.sh")}" "{gamePath}" "-force-vulkan"'],
